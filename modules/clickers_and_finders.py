@@ -40,10 +40,17 @@ def wait_span_click(driver: WebDriver, text: str, time: float=5.0, click: bool=T
                 button.click()
                 buffer(click_gap)
             return button
-        except Exception as e:
-            print_lg("Click Failed! Didn't find '"+text+"'")
-            # print_lg(e)
-            return False
+        except:
+            try:
+                button = WebDriverWait(driver,time).until(EC.presence_of_element_located((By.XPATH, './/button[contains(normalize-space(.), "'+text+'")]')))
+                if scroll:  scroll_to_view(driver, button, scrollTop)
+                if click:
+                    button.click()
+                    buffer(click_gap)
+                return button
+            except Exception as e:
+                print_lg("Click Failed! Didn't find '"+text+"'")
+                return False
 
 def multi_sel(driver: WebDriver, texts: list, time: float=5.0) -> None:
     '''
