@@ -17,11 +17,10 @@ version:    24.12.29.12.30
 
 # These Sentences are Searched in LinkedIn
 # Enter your search terms inside '[ ]' with quotes ' "searching title" ' for each search followed by comma ', ' Eg: ["Software Engineer", "Software Developer", "Selenium Developer"]
-search_terms = ["Backend Engineer", "Backend Developer", "Full Stack Engineer", "Full Stack Developer", "Python Developer", "Node.js Developer", "Software Engineer", "Cloud Engineer", "DevOps Engineer", "Senior Backend Engineer", "Senior Full Stack Developer", "Senior Cloud Engineer", "Senior DevOps Engineer"]
+search_terms = ["Software Engineer", "Backend Developer", "Backend Engineer", "Full Stack Developer", "Full Stack Engineer", "Python Developer", "Node.js Developer", "Software Developer"]
 
 # Search location, this will be filled in "City, state, or zip code" search box. If left empty as "", tool will not fill it.
 search_location = "Center District, Israel"               # Some valid examples: "", "United States", "India", "Chicago, Illinois, United States", "90001, Los Angeles, California, United States", "Bengaluru, Karnataka, India", etc.
-# search_location = "Israel"               # Some valid examples: "", "United States", "India", "Chicago, Illinois, United States", "90001, Los Angeles, California, United States", "Bengaluru, Karnataka, India", etc.
 
 # After how many number of applications in current search should the bot switch to next search? 
 switch_number = 30                 # Only numbers greater than 0... Don't put in quotes
@@ -47,7 +46,7 @@ This is below format: QUESTION = VALID_ANSWER
 
 '''
 
-sort_by = "Most recent"                       # "Most recent", "Most relevant" or ("" to not select) 
+sort_by = ""                       # "Most recent", "Most relevant" or ("" to not select) 
 date_posted = "Past month"         # "Any time", "Past month", "Past week", "Past 24 hours" or ("" to not select)
 salary = ""                       # "$40,000+", "$60,000+", "$80,000+", "$100,000+", "$120,000+", "$140,000+", "$160,000+", "$180,000+", "$200,000+"
 
@@ -90,7 +89,8 @@ about_company_bad_words = ["Crossover"]       # (dynamic multiple search) or lea
 about_company_good_words = []      # (dynamic multiple search) or leave empty as []. Ex: ["Robert Half", "Dice"]
 
 # Avoid applying to these companies if they have these bad words in their 'Job Description' section...  (In development)
-bad_words = [".NET", "Embedded Programming", "PHP", "Ruby", "CNC"]                     # (dynamic multiple search) or leave empty as []. Case Insensitive. Ex: ["word_1", "phrase 1", "word word", "polygraph", "US Citizenship", "Security Clearance"]
+bad_words = [".NET", "C#", "Embedded", "PHP", "Ruby", "CNC", "QA Engineer", "QA Automation", "Test Automation Engineer", "Support Engineer Only", "Help Desk", "Network Engineer", "System Administrator", "SAP", "Salesforce"]                     # (dynamic multiple search) or leave empty as []. Case Insensitive. Ex: ["word_1", "phrase 1", "word word", "polygraph", "US Citizenship", "Security Clearance"]
+# Note: Removed overly restrictive words like "Technical Support", "Data Analyst", "Business Analyst", "Project Manager" - many good dev jobs mention these as collaboration aspects
 
 # Do you have an active Security Clearance? (True for Yes and False for No)
 security_clearance = False         # True or False, Note: True or False are case-sensitive
@@ -99,7 +99,8 @@ security_clearance = False         # True or False, Note: True or False are case
 did_masters = False                 # True or False, Note: True or False are case-sensitive
 
 # Avoid applying to jobs if their required experience is above your current_experience. (Set value as -1 if you want to apply to all ignoring their required experience...)
-current_experience = 4             # Integers > -2 (Ex: -1, 0, 1, 2, 3, 4...)
+current_experience = 5             # Integers > -2 (Ex: -1, 0, 1, 2, 3, 4...)
+# Note: Changed from 4 to 5 because with bootcamp experience (2020-2022) + work experience (2021-present), you have nearly 5 years of practical experience
 ##
 
 

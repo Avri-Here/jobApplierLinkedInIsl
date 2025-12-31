@@ -322,3 +322,15 @@ alternate link: https://discord.gg/ykfDjRFB
 ---
 
 [back to the top](#linkedin-ai-auto-job-applier-)
+
+
+
+
+
+
+
+
+
+
+
+python runAiBot.py
