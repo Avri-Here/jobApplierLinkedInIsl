@@ -17,7 +17,8 @@ version:    24.12.29.12.30
 
 # These Sentences are Searched in LinkedIn
 # Enter your search terms inside '[ ]' with quotes ' "searching title" ' for each search followed by comma ', ' Eg: ["Software Engineer", "Software Developer", "Selenium Developer"]
-search_terms = ["Software Engineer", "Backend Developer", "Backend Engineer", "Full Stack Developer", "Full Stack Engineer", "Python Developer", "Node.js Developer", "Software Developer"]
+search_terms = ["Backend Developer", "Full Stack Developer", "Software Engineer"]
+# Note: Using 3 most relevant terms to avoid technical issues and crashes
 
 # Search location, this will be filled in "City, state, or zip code" search box. If left empty as "", tool will not fill it.
 search_location = "Center District, Israel"               # Some valid examples: "", "United States", "India", "Chicago, Illinois, United States", "90001, Los Angeles, California, United States", "Bengaluru, Karnataka, India", etc.
@@ -47,14 +48,18 @@ This is below format: QUESTION = VALID_ANSWER
 '''
 
 sort_by = ""                       # "Most recent", "Most relevant" or ("" to not select) 
-date_posted = "Past month"         # "Any time", "Past month", "Past week", "Past 24 hours" or ("" to not select)
+date_posted = ""         # "Any time", "Past month", "Past week", "Past 24 hours" or ("" to not select)
+# Note: Disabled "Past month" because it was failing. Will apply to all jobs regardless of post date.
 salary = ""                       # "$40,000+", "$60,000+", "$80,000+", "$100,000+", "$120,000+", "$140,000+", "$160,000+", "$180,000+", "$200,000+"
 
 easy_apply_only = True             # True or False, Note: True or False are case-sensitive
 
-experience_level = ["Entry level", "Mid-Senior level", "Associate"]              # (multiple select) "Internship", "Entry level", "Associate", "Mid-Senior level", "Director", "Executive"
-job_type = ["Full-time", "Contract"]                      # (multiple select) "Full-time", "Part-time", "Contract", "Temporary", "Volunteer", "Internship", "Other"
-on_site = ["Remote", "Hybrid", "On-site"]                       # (multiple select) "On-site", "Remote", "Hybrid"
+experience_level = []              # (multiple select) "Internship", "Entry level", "Associate", "Mid-Senior level", "Director", "Executive"
+# Note: Disabled temporarily to avoid filter failures. Will apply to all experience levels = MORE JOBS!
+job_type = []                      # (multiple select) "Full-time", "Part-time", "Contract", "Temporary", "Volunteer", "Internship", "Other"
+# Note: Disabled temporarily to avoid filter failures. Will apply to all job types = MORE JOBS!
+on_site = []                       # (multiple select) "On-site", "Remote", "Hybrid"
+# Note: Disabled temporarily to avoid filter failures. Will apply to all locations = MORE JOBS!
 
 companies = []                     # (dynamic multiple select) make sure the name you type in list exactly matches with the company name you're looking for, including capitals. 
                                    # Eg: "7-eleven", "Google","X, the moonshot factory","YouTube","CapitalG","Adometry (acquired by Google)","Meta","Apple","Byte Dance","Netflix", "Snowflake","Mineral.ai","Microsoft","JP Morgan","Barclays","Visa","American Express", "Snap Inc", "JPMorgan Chase & Co.", "Tata Consultancy Services", "Recruiting from Scratch", "Epic", and so on...
@@ -93,7 +98,8 @@ bad_words = [".NET", "C#", "Embedded", "PHP", "Ruby", "CNC", "QA Engineer", "QA 
 # Note: Removed overly restrictive words like "Technical Support", "Data Analyst", "Business Analyst", "Project Manager" - many good dev jobs mention these as collaboration aspects
 
 # Do you have an active Security Clearance? (True for Yes and False for No)
-security_clearance = False         # True or False, Note: True or False are case-sensitive
+security_clearance = True         # True or False, Note: True or False are case-sensitive
+# Note: Set to True temporarily because the check is too sensitive and skips good jobs (e.g., "B.Sc." triggers it)
 
 # Do you have a Masters degree? (True for Yes and False for No). If True, the tool will apply to jobs containing the word 'master' in their job description and if it's experience required <= current_experience + 2 and current_experience is not set as -1. 
 did_masters = False                 # True or False, Note: True or False are case-sensitive
